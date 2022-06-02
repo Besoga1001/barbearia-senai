@@ -3,7 +3,7 @@ tela1 = 1
 print('Bem-vindo ao aplicativo de agendamento da Barbearia X')
 
 while (tela1 == 1):
-    tipoUsuario = int(input('Você é cliente ou empresa? \nDigite 1 para cliente e 2 para empresa: '))
+    tipoUsuario = int(input('Você é cliente ou empresa? \nDigite 1 para cliente ou 2 para empresa: '))
 
     if (tipoUsuario == 1):
         tela1 = 0
