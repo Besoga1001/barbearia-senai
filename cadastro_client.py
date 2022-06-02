@@ -8,3 +8,8 @@ if (senha_cadastro == confirmar_senha_cadastro):
 else:
     validar_cadastro = 0
 
+if (validar_cadastro == 1):
+    print('Cadastro concluído com sucesso.')
+else:
+    print('Erro.')
+
