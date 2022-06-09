@@ -1,1 +1,2 @@
-print('Login de Empresa.')
+def tela_cadastro():
+    print('Login de Empresa.')
