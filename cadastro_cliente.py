@@ -20,8 +20,7 @@ def cadastro():
 
 
 def valida_cadastro(valida_nome, valida_senha, nome_cadastro, senha_cadastro):
-    global existe_cadastro
-    if valida_nome == nome_cadastro and valida_senha == senha_cadastro:
-        existe_cadastro = 1
+    if (valida_nome == nome_cadastro) and (valida_senha == senha_cadastro):
+        return 1
     else:
-        existe_cadastro = 0
+        return 0

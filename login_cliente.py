@@ -3,11 +3,11 @@ from cadastro_cliente import cadastro, valida_cadastro
 def login(nome_cadastro2, senha_cadastro2):
     global login_nome
     global login_senha
-    existe_cadastro = 0
+    global existe_cadastro
     print('Login do Cliente.\nEntre com suas informações! ')
     login_nome = input('Nome: ')
     login_senha = input('Senha: ')
-    valida_cadastro(login_nome, login_senha, nome_cadastro2, senha_cadastro2)
+    existe_cadastro = valida_cadastro(login_nome, login_senha, nome_cadastro2, senha_cadastro2)
     if existe_cadastro == 1:
         print('Login efeituado com sucesso.')
     else:
