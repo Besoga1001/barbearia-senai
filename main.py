@@ -21,3 +21,5 @@ def inicio():
         else:
             print('Opção Inválida, favor digitar novamente.')
             continue
+
+inicio()

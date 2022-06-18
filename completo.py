@@ -1,4 +1,5 @@
 #jo.987victor@gmail.com
+import numpy as np
 
 quadro_horarios = [
     ['Segunda'] , ['Terça']   , ['Quarta']    , ['Quinta'] , ['Sexta'],
@@ -11,13 +12,15 @@ quadro_horarios = [
     ['15:00']   , ['15:00']   , ['15:00']     , ['15:00']  , ['15:00'],
     ['16:00']   , ['16:00']   , ['16:00']     , ['16:00']  , ['16:00'],
     ['17:00']   , ['17:00']   , ['17:00']     , ['17:00']  , ['17:00'],
-    ['18:00']   , ['18:00']   , ['18:00']     , ['18:00']  , ['18:00'],
-            ]
+    ['18:00']   , ['18:00']   , ['18:00']     , ['18:00']  , ['18:00']
+]
 
-registro = [
-    ['Nome']    , ['Tipo']    , ['Barbeiro']  , ['Dia da Semana'], ['Horário']
-    ['Bernardo'], ['Completo'], ['Barbeiro 2'], ['Segunda']      , ['14:00']
-            ]
+registro = np.array([
+    ['Nome', 'Tipo', 'Barbeiro', 'Dia da Semana', 'Horarios'],
+    ['Bernardo', 'Completo', 'Barbeiro 1', 'Segunda', '14:00']
+])
+
+registro_linha = []
 
 def selecionaCorte():
     print('O que você deseja fazer?\n'
@@ -29,12 +32,16 @@ def selecionaCorte():
 
     if resposta == 1:
         print ('Você reservou um Corte de Cabelo')
+        registro_linha.append('Cabelo')
     elif resposta == 2:
         print ('Você reservou para Fazer a Barba')
+        registro_linha.append('Barba')
     elif resposta == 3:
         print ('Você reservou para Fazer Sombrancelha')
+        registro_linha.append('Sombrancelha')
     elif resposta == 4:
         print ('Você reservou um Corte Completo')
+        registro_linha.append('Completo')
     else:
         print('Digite Novamente ')
 
