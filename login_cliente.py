@@ -39,11 +39,12 @@ def login(listaCadastroCliente):
         existe_cadastro = valida_cadastro(login_nome, login_senha, listaCadastroCliente)
         if existe_cadastro == 1:
             print('Login de cliente efeituado com sucesso.')
-            from completo import selecionaCorte, selecionaBarbeiro, mostraHorariosFuncionamento, registro_linha
+            from completo import selecionaCorte, selecionaBarbeiro, escolheDiaSemana, mostraHorariosFuncionamento, registro_linha
             registro_linha.append(login_nome)
 
             selecionaCorte()
             selecionaBarbeiro()
+            escolheDiaSemana()
             mostraHorariosFuncionamento()
         else:
             print('Login não cadastrado.')

@@ -58,12 +58,46 @@ def selecionaBarbeiro():
     resposta = int(input('Digite o numero do Barbeiro Desejado: '))
     if resposta == 1:
         print ('Barbeiro 1 Escolhido com sucesso\n')
+        registro_linha.append('Barbeiro 1')
     elif resposta == 2:
         print ('Barbeiro 2 Escolhido com sucesso\n')
+        registro_linha.append('Barbeiro 2')
     elif resposta == 3:
         print ('Barbeiro 3 Escolhido com sucesso\n')
+        registro_linha.append('Barbeiro 3')
     elif resposta == 4:
         print ('Barbeiro 4 Escolhido com sucesso\n')
+        registro_linha.append('Barbeiro 4')
+    else:
+        print('Digite Novamente')
+
+def escolheDiaSemana():
+
+    resposta = ''
+
+    print('Qual dia da semana você deseja?\n'
+    '1- Segunda\n'
+    '2- Terça\n'
+    '3- Quarta\n'
+    '4- Quinta\n'
+    '5- Sexta\n')
+
+    resposta = int(input('Digite o número da opção desejada: '))
+    if resposta == 1:
+        print ('Segunda Escolhida com sucesso\n')
+        registro_linha.append('Segunda')
+    elif resposta == 2:
+        print ('Terça Escolhida com sucesso\n')
+        registro_linha.append('Terça')
+    elif resposta == 3:
+        print ('Quarta Escolhida com sucesso\n')
+        registro_linha.append('Quarta')
+    elif resposta == 4:
+        print ('Quinta Escolhida com sucesso\n')
+        registro_linha.append('Quinta')
+    elif resposta == 5:
+        print ('Sexta Escolhida com sucesso\n')
+        registro_linha.append('Sexta')
     else:
         print('Digite Novamente')
 
