@@ -1,22 +1,23 @@
 print('Bem-vindo ao aplicativo de agendamento da Barbearia X')
 
-while True:
-    print('Você é cliente ou empresa? \n'
-    '1 - Cliente\n'
-    '2 - Empresa')
+def inicio():
+    while True:
+        print('Você é cliente ou empresa? \n'
+        '1 - Cliente\n'
+        '2 - Empresa')
 
-    tipoUsuario = input('Digite o número da opção desejada: ')
+        tipoUsuario = input('Digite o número da opção desejada: ')
 
-    if tipoUsuario == '1':
-        from login_cliente import tela_cliente
+        if tipoUsuario == '1':
+            from login_cliente import tela_cliente
 
-        tela_cliente()
-        break
-    elif tipoUsuario == '2':
-        from login_empresa import tela_empresa
+            tela_cliente()
+            break
+        elif tipoUsuario == '2':
+            from login_empresa import tela_empresa
 
-        tela_empresa()
-        break
-    else:
-        print('Opção Inválida, favor digitar novamente.')
-        continue
+            tela_empresa()
+            break
+        else:
+            print('Opção Inválida, favor digitar novamente.')
+            continue

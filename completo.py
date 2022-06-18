@@ -41,13 +41,12 @@ def selecionaBarbeiro():
 
 
 def mostraHorariosFuncionamento():
-    horarios = print('Esses são os horarios de Funcionamento de Segunda a Sexta:\n'
+    print('Esses são os horarios de Funcionamento de Segunda a Sexta:\n'
     '08:00\n'
     '09:00\n'
     '10:00\n'
     '11:00\n'
     '13:00\n'
-    '14:00\n'
     '14:00\n'
     '15:00\n'
     '16:00\n'
