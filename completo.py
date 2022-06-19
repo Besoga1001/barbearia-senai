@@ -1,24 +1,22 @@
 #jo.987victor@gmail.com
-import numpy as np
-
 quadro_horarios = [
-    ['Segunda'] , ['Terça']   , ['Quarta']    , ['Quinta'] , ['Sexta'],
-    ['08:00']   , ['08:00']   , ['08:00']     , ['08:00']  , ['08:00'],
-    ['09:00']   , ['09:00']   , ['09:00']     , ['09:00']  , ['09:00'],
-    ['10:00']   , ['10:00']   , ['10:00']     , ['10:00']  , ['10:00'],
-    ['11:00']   , ['11:00']   , ['11:00']     , ['11:00']  , ['11:00'],
-    ['13:00']   , ['13:00']   , ['13:00']     , ['13:00']  , ['13:00'],
-    ['14:00']   , ['14:00']   , ['14:00']     , ['14:00']  , ['14:00'],
-    ['15:00']   , ['15:00']   , ['15:00']     , ['15:00']  , ['15:00'],
-    ['16:00']   , ['16:00']   , ['16:00']     , ['16:00']  , ['16:00'],
-    ['17:00']   , ['17:00']   , ['17:00']     , ['17:00']  , ['17:00'],
-    ['18:00']   , ['18:00']   , ['18:00']     , ['18:00']  , ['18:00']
+    ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
+    ['08:00', '08:00', '08:00', '08:00', '08:00'],
+    ['09:00', '09:00', '09:00', '09:00', '09:00'],
+    ['10:00', '10:00', '10:00', '10:00', '10:00'],
+    ['11:00', '11:00', '11:00' ,'11:00', '11:00'],
+    ['13:00', '13:00', '13:00', '13:00', '13:00'],
+    ['14:00', '14:00', '14:00', '14:00', '14:00'],
+    ['15:00', '15:00', '15:00', '15:00', '15:00'],
+    ['16:00', '16:00', '16:00', '16:00', '16:00'],
+    ['17:00', '17:00', '17:00', '17:00', '17:00'],
+    ['18:00', '18:00', '18:00', '18:00', '18:00']
 ]
 
-registro = np.array([
+registro = [
     ['Nome', 'Tipo', 'Barbeiro', 'Dia da Semana', 'Horarios'],
     ['Bernardo', 'Completo', 'Barbeiro 1', 'Segunda', '14:00']
-])
+]
 
 registro_linha = []
 
@@ -103,17 +101,31 @@ def escolheDiaSemana():
         print('Digite Novamente')
 
 
-def mostraHorariosFuncionamento():
-    print('Esses são os horarios de Funcionamento de Segunda a Sexta:\n'
-    '08:00\n'
-    '09:00\n'
-    '10:00\n'
-    '11:00\n'
-    '13:00\n'
-    '14:00\n'
-    '15:00\n'
-    '16:00\n'
-    '17:00\n'
-    '18:00\n')
-    print('Os Horarios de Funcionamento da Barbearia X')
+def selecionarHorario():
+    try:
+        horario = ('\nSelecione o horário para o concluir o agendamento: ')
+    except:
+        print('\nHorário não disponivel, selecione novamente')
+        selecionarHorario()
 
+
+def mostraHorariosFuncionamento():
+    dia = registro_linha[3]
+    print('Esses são os horários disponíveis de',dia+':\n')
+    if dia == 'Segunda':
+        for x in range(0,10):
+            print(quadro_horarios[x][0])
+    elif dia == 'Terça':
+        for x in range(0,10):
+            print(quadro_horarios[x][1])
+    elif dia == 'Quarta':
+        for x in range(0,10):
+            print(quadro_horarios[x][2])
+    elif dia == 'Quinta':
+        for x in range(0,10):
+            print(quadro_horarios[x][3])
+    else:
+        for x in range(0,10):
+            print(quadro_horarios[x][4])
+
+    selecionarHorario()

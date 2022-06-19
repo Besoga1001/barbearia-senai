@@ -2,7 +2,7 @@ listaCadastro = []
 
 
 def receberDadosCadastro():
-    print('\nCadastro Cliente\nEntre com suas informações')
+    print('\nCadastro Empresa\nEntre com suas informações')
     nome_cadastro = str(input('Nome: '))
     senha_cadastro = str(input('Senha: '))
     confirmar_senha_cadastro = str(input('Confirmar Senha: '))
@@ -32,7 +32,7 @@ def login(listaCadastro):
     global login_nome
     global login_senha
 
-    print('\nLogin do Cliente.\nEntre com suas informações! ')
+    print('\nLogin da Empresa.\nEntre com suas informações! ')
     login_nome = input('Nome: ')
     login_senha = input('Senha: ')
 
@@ -40,6 +40,9 @@ def login(listaCadastro):
         existe_cadastro = valida_cadastro(login_nome, login_senha, listaCadastro)
         if existe_cadastro == 1:
             print('Login de empresa efeituado com sucesso.')
+            from consultar_agenda import recebeArrays
+
+            recebeArrays()
         else:
             print('Login não cadastrado.')
             tela_empresa()
