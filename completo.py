@@ -71,6 +71,7 @@ def selecionaBarbeiro():
     else:
         print('Digite Novamente')
 
+
 def escolheDiaSemana():
 
     resposta = ''
