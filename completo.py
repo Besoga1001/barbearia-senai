@@ -141,20 +141,33 @@ def mostraHorariosFuncionamento():
             print(quadro_segunda[x][0])
         h = selecionarHorario()
         for x in range(0, 4):
-            if h in quadro_segunda:
+            if h in quadro_segunda[x][0]:
                 quadro_segunda[x][0] = ''
-                print(quadro_segunda[x][0])
     elif dia == 'Terça':
         for x in range(0,4):
             print(quadro_terca[x][0])
+        h = selecionarHorario()
+        for x in range(0, 4):
+            if h in quadro_segunda[x][0]:
+                quadro_segunda[x][0] = ''
     elif dia == 'Quarta':
         for x in range(0,4):
             print(quadro_quarta[x][0])
+        h = selecionarHorario()
+        for x in range(0, 4):
+            if h in quadro_segunda[x][0]:
+                quadro_segunda[x][0] = ''
     elif dia == 'Quinta':
         for x in range(0,4):
             print(quadro_quinta[x][0])
+        h = selecionarHorario()
+        for x in range(0, 4):
+            if h in quadro_segunda[x][0]:
+                quadro_segunda[x][0] = ''
     else:
         for x in range(0,4):
             print(quadro_sexta[x][0])
-
-
+        h = selecionarHorario()
+        for x in range(0, 4):
+            if h in quadro_segunda[x][0]:
+                quadro_segunda[x][0] = ''
