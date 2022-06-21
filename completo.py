@@ -1,4 +1,3 @@
-#jo.987victor@gmail.com
 quadro_segunda = [
     ['Segunda'],
     ['08:00'],
@@ -34,14 +33,14 @@ quadro_sexta = [
     ['17:00']
 ]
 
-x = '11:00'
-
 registro = [
     ['Nome', 'Tipo', 'Barbeiro', 'Dia da Semana', 'Horarios'],
     ['Bernardo', 'Completo', 'Barbeiro 1', 'Segunda', '14:00']
 ]
 
 registro_linha = []
+
+print(registro)
 
 def selecionaCorte():
     print('O que você deseja fazer?\n'
