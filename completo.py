@@ -1,17 +1,40 @@
 #jo.987victor@gmail.com
-quadro_horarios = [
-    ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta'],
-    ['08:00', '08:00', '08:00', '08:00', '08:00'],
-    ['09:00', '09:00', '09:00', '09:00', '09:00'],
-    ['10:00', '10:00', '10:00', '10:00', '10:00'],
-    ['11:00', '11:00', '11:00' ,'11:00', '11:00'],
-    ['13:00', '13:00', '13:00', '13:00', '13:00'],
-    ['14:00', '14:00', '14:00', '14:00', '14:00'],
-    ['15:00', '15:00', '15:00', '15:00', '15:00'],
-    ['16:00', '16:00', '16:00', '16:00', '16:00'],
-    ['17:00', '17:00', '17:00', '17:00', '17:00'],
-    ['18:00', '18:00', '18:00', '18:00', '18:00']
+quadro_segunda = [
+    ['Segunda'],
+    ['08:00'],
+    ['09:00'],
+    ['10:00']
 ]
+
+quadro_terca = [
+    ['Terça'],
+    ['08:00'],
+    ['09:00'],
+    ['10:00']
+]
+
+quadro_quarta = [
+    ['Quarta'],
+    ['08:00'],
+    ['09:00'],
+    ['10:00']
+]
+
+quadro_quinta = [
+    ['Quinta'],
+    ['08:00'],
+    ['09:00'],
+    ['10:00']
+]
+
+quadro_sexta = [
+    ['Sexta'],
+    ['15:00'],
+    ['16:00'],
+    ['17:00']
+]
+
+x = '11:00'
 
 registro = [
     ['Nome', 'Tipo', 'Barbeiro', 'Dia da Semana', 'Horarios'],
@@ -103,7 +126,8 @@ def escolheDiaSemana():
 
 def selecionarHorario():
     try:
-        horario = ('\nSelecione o horário para o concluir o agendamento: ')
+        horario = input('\nSelecione o horário para o concluir o agendamento: ')
+        return horario
     except:
         print('\nHorário não disponivel, selecione novamente')
         selecionarHorario()
@@ -113,19 +137,24 @@ def mostraHorariosFuncionamento():
     dia = registro_linha[3]
     print('Esses são os horários disponíveis de',dia+':\n')
     if dia == 'Segunda':
-        for x in range(0,10):
-            print(quadro_horarios[x][0])
+        for x in range(0,4):
+            print(quadro_segunda[x][0])
+        h = selecionarHorario()
+        for x in range(0, 4):
+            if h in quadro_segunda:
+                quadro_segunda[x][0] = ''
+                print(quadro_segunda[x][0])
     elif dia == 'Terça':
-        for x in range(0,10):
-            print(quadro_horarios[x][1])
+        for x in range(0,4):
+            print(quadro_terca[x][0])
     elif dia == 'Quarta':
-        for x in range(0,10):
-            print(quadro_horarios[x][2])
+        for x in range(0,4):
+            print(quadro_quarta[x][0])
     elif dia == 'Quinta':
-        for x in range(0,10):
-            print(quadro_horarios[x][3])
+        for x in range(0,4):
+            print(quadro_quinta[x][0])
     else:
-        for x in range(0,10):
-            print(quadro_horarios[x][4])
+        for x in range(0,4):
+            print(quadro_sexta[x][0])
 
-    selecionarHorario()
+
