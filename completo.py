@@ -1,46 +1,16 @@
-quadro_segunda = [
-    ['Segunda'],
-    ['08:00'],
-    ['09:00'],
-    ['10:00']
-]
-
-quadro_terca = [
-    ['Terça'],
-    ['08:00'],
-    ['09:00'],
-    ['10:00']
-]
-
-quadro_quarta = [
-    ['Quarta'],
-    ['08:00'],
-    ['09:00'],
-    ['10:00']
-]
-
-quadro_quinta = [
-    ['Quinta'],
-    ['08:00'],
-    ['09:00'],
-    ['10:00']
-]
-
-quadro_sexta = [
-    ['Sexta'],
-    ['15:00'],
-    ['16:00'],
-    ['17:00']
+quadro_horario = [
+    ['Segunda', '08:00', '09:00', '10:00'],
+    ['Terça', '08:00', '09:00', '10:00'],
+    ['Quarta', '08:00', '09:00', '10:00'],
+    ['Quinta', '08:00', '09:00', '10:00'],
+    ['Sexta', '08:00', '09:00', '10:00'],
 ]
 
 registro = [
-    ['Nome', 'Tipo', 'Barbeiro', 'Dia da Semana', 'Horarios'],
-    ['Bernardo', 'Completo', 'Barbeiro 1', 'Segunda', '14:00']
+    ['Nome', 'Tipo', 'Barbeiro', 'Dia da Semana', 'Horário']
 ]
 
 registro_linha = []
-
-print(registro)
 
 def selecionaCorte():
     print('O que você deseja fazer?\n'
@@ -125,48 +95,50 @@ def escolheDiaSemana():
 
 def selecionarHorario():
     try:
-        horario = input('\nSelecione o horário para o concluir o agendamento: ')
+        horario = str(input('\nSelecione o horário para o concluir o agendamento: '))
         return horario
     except:
-        print('\nHorário não disponivel, selecione novamente')
+        print('\nHorário não disponivel, selecione novamente.')
         selecionarHorario()
+
+
+def alteraMatriz(x):
+    for y in range(4):
+        print(quadro_horario[x][y])
+    h = selecionarHorario()
+    for y in range(4):
+        if h == quadro_horario[x][y]:
+            quadro_horario[x][y] = ''
+            registro_linha.append(h)
+            break
 
 
 def mostraHorariosFuncionamento():
     dia = registro_linha[3]
     print('Esses são os horários disponíveis de',dia+':\n')
+
     if dia == 'Segunda':
-        for x in range(0,4):
-            print(quadro_segunda[x][0])
-        h = selecionarHorario()
-        for x in range(0, 4):
-            if h in quadro_segunda[x][0]:
-                quadro_segunda[x][0] = ''
+        x = 0
+        alteraMatriz(x)
     elif dia == 'Terça':
-        for x in range(0,4):
-            print(quadro_terca[x][0])
-        h = selecionarHorario()
-        for x in range(0, 4):
-            if h in quadro_segunda[x][0]:
-                quadro_segunda[x][0] = ''
+        x = 1
+        alteraMatriz(x)
     elif dia == 'Quarta':
-        for x in range(0,4):
-            print(quadro_quarta[x][0])
-        h = selecionarHorario()
-        for x in range(0, 4):
-            if h in quadro_segunda[x][0]:
-                quadro_segunda[x][0] = ''
+        x = 2
+        alteraMatriz(x)
     elif dia == 'Quinta':
-        for x in range(0,4):
-            print(quadro_quinta[x][0])
-        h = selecionarHorario()
-        for x in range(0, 4):
-            if h in quadro_segunda[x][0]:
-                quadro_segunda[x][0] = ''
-    else:
-        for x in range(0,4):
-            print(quadro_sexta[x][0])
-        h = selecionarHorario()
-        for x in range(0, 4):
-            if h in quadro_segunda[x][0]:
-                quadro_segunda[x][0] = ''
+        x = 3
+        alteraMatriz(x)
+    elif dia == 'Sexta':
+        x = 4
+        alteraMatriz(x)
+
+
+    registro.append(registro_linha)
+    print('Agendamento concluído com sucesso\n')
+    for a in range(4):
+        for b in range(5):
+            print(registro[a][b])
+    from main import inicio
+
+    inicio()
