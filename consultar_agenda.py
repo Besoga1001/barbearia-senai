@@ -12,7 +12,6 @@ def consultaAgenda():
     n = len(registro)
 
     for x in range(0, n):
-        print(x)
         for y in range(0, 5):
             print(registro[x][y], end=' ')
             if y == 4:

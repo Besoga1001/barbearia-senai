@@ -94,12 +94,12 @@ def escolheDiaSemana():
 
 
 def selecionarHorario():
-    #try:
-    horario = str(input('\nSelecione o horário para o concluir o agendamento: '))
-    return horario
-    #except:
-        #print('\nHorário não disponivel, selecione novamente.')
-        #selecionarHorario()
+    try:
+        horario = str(input('\nSelecione o horário para o concluir o agendamento: '))
+        return horario
+    except:
+        print('\nHorário não disponivel, selecione novamente.')
+        selecionarHorario()
 
 
 def alteraMatriz(x):
@@ -133,7 +133,9 @@ def mostraHorariosFuncionamento():
         x = 4
         alteraMatriz(x)
 
-    registro.append(registro_linha)
+    c = 0
+    c += 1
+    registro.insert(c, registro_linha)
     print(registro)
     print('Agendamento concluído com sucesso\n')
     from main import inicio

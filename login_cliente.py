@@ -36,41 +36,41 @@ def login(listaCadastroCliente):
     login_nome = input('Nome: ')
     login_senha = input('Senha: ')
 
-    #try:
-    existe_cadastro = valida_cadastro(login_nome, login_senha, listaCadastroCliente)
-    if existe_cadastro == 1:
-        print('Login de cliente efeituado com sucesso!\n')
-        from completo import selecionaCorte, selecionaBarbeiro, escolheDiaSemana, mostraHorariosFuncionamento, registro_linha
-        registro_linha.clear()
-        registro_linha.append(login_nome)
+    try:
+        existe_cadastro = valida_cadastro(login_nome, login_senha, listaCadastroCliente)
+        if existe_cadastro == 1:
+            print('Login de cliente efeituado com sucesso!\n')
+            from completo import selecionaCorte, selecionaBarbeiro, escolheDiaSemana, mostraHorariosFuncionamento, registro_linha
+            registro_linha.clear()
+            registro_linha.append(login_nome)
 
-        selecionaCorte()
-        selecionaBarbeiro()
-        escolheDiaSemana()
-        mostraHorariosFuncionamento()
-    else:
+            selecionaCorte()
+            selecionaBarbeiro()
+            escolheDiaSemana()
+            mostraHorariosFuncionamento()
+        else:
+            print('Login não cadastrado.')
+            tela_cliente()
+    except:
         print('Login não cadastrado.')
         tela_cliente()
-    #except:
-        #print('Login não cadastrado.')
-        #tela_cliente()
 
 
 def tela_cliente():
-    #try:
-    print('\nTela de Cliente\n'
-          '1 - Tela de Login\n'
-          '2 - Tela de Cadastro')
+    try:
+        print('\nTela de Cliente\n'
+              '1 - Tela de Login\n'
+              '2 - Tela de Cadastro')
 
-    tela = str(input('Digite o número da opção desejada: '))
+        tela = str(input('Digite o número da opção desejada: '))
 
-    if tela == '1':
-        login(listaCadastroCliente)
-    elif tela == '2':
-        inserirCadastro(listaCadastroCliente)
-    else:
+        if tela == '1':
+            login(listaCadastroCliente)
+        elif tela == '2':
+            inserirCadastro(listaCadastroCliente)
+        else:
+            print('Opção Inválida, favor digitar novamente.')
+            tela_cliente()
+    except:
         print('Opção Inválida, favor digitar novamente.')
         tela_cliente()
-    #except:
-        #print('Opção Inválida, favor digitar novamente.')
-        #tela_cliente()
