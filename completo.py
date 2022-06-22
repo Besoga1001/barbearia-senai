@@ -7,7 +7,7 @@ quadro_horario = [
 ]
 
 registro = [
-    ['Nome', 'Tipo', 'Barbeiro', 'Dia da Semana', 'Horário']
+    ['Nome', 'Tipo', 'Barbeiro', 'Dia', 'Horário']
 ]
 
 registro_linha = []
@@ -94,12 +94,12 @@ def escolheDiaSemana():
 
 
 def selecionarHorario():
-    try:
-        horario = str(input('\nSelecione o horário para o concluir o agendamento: '))
-        return horario
-    except:
-        print('\nHorário não disponivel, selecione novamente.')
-        selecionarHorario()
+    #try:
+    horario = str(input('\nSelecione o horário para o concluir o agendamento: '))
+    return horario
+    #except:
+        #print('\nHorário não disponivel, selecione novamente.')
+        #selecionarHorario()
 
 
 def alteraMatriz(x):
@@ -133,12 +133,9 @@ def mostraHorariosFuncionamento():
         x = 4
         alteraMatriz(x)
 
-
     registro.append(registro_linha)
+    print(registro)
     print('Agendamento concluído com sucesso\n')
-    for a in range(4):
-        for b in range(5):
-            print(registro[a][b])
     from main import inicio
 
     inicio()

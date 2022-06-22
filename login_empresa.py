@@ -19,6 +19,7 @@ def receberDadosCadastro():
 def inserirCadastro(listaCadastro):
     dadosCadastro = receberDadosCadastro()
     listaCadastro.append(dadosCadastro)
+    tela_empresa()
 
 
 def valida_cadastro(valida_nome, valida_senha, listaCadastro):
@@ -36,32 +37,33 @@ def login(listaCadastro):
     login_nome = input('Nome: ')
     login_senha = input('Senha: ')
 
-    try:
-        existe_cadastro = valida_cadastro(login_nome, login_senha, listaCadastro)
-        if existe_cadastro == 1:
-            print('Login de empresa efeituado com sucesso.')
-            from consultar_agenda import recebeArrays
+    #try:
+    existe_cadastro = valida_cadastro(login_nome, login_senha, listaCadastro)
+    if existe_cadastro == 1:
+        print('Login de empresa efeituado com sucesso.')
+        from consultar_agenda import escolheConsulta
 
-            recebeArrays()
-        else:
-            print('Login não cadastrado.')
-            tela_empresa()
-    except:
+        escolheConsulta()
+    else:
         print('Login não cadastrado.')
         tela_empresa()
+    #except:
+        #print('Login não cadastrado.')
+        #tela_empresa()
 
 
 def tela_empresa():
-    tela = ''
-    while (tela != '1') or (tela != '2'):
+    #try:
+    print('\nTela de Empresa\n'
+          '1 - Tela de Login\n'
+          '2 - Tela de Cadastro')
 
-        print('\nTela de Empresa\n'
-              '1 - Tela de Login\n'
-              '2 - Tela de Cadastro')
+    tela = str(input('Digite o número da opção desejada: '))
 
-        tela = str(input('Digite o número da opção desejada: '))
-
-        if tela == '1':
-            login(listaCadastro)
-        elif tela == '2':
-            inserirCadastro(listaCadastro)
+    if tela == '1':
+        login(listaCadastro)
+    elif tela == '2':
+        inserirCadastro(listaCadastro)
+    #except:
+        #print('Opção Inválida, favor digitar novamente.')
+        #tela_empresa()
